@@ -1,26 +1,26 @@
-"use client";
-import Brain from "@/components/brain";
-import { motion, useInView, useScroll } from "framer-motion";
-import Image from "next/image";
-import { useRef } from "react";
+'use client'
+import Brain from '@/components/brain'
+import { motion, useInView, useScroll } from 'framer-motion'
+import Image from 'next/image'
+import { useRef } from 'react'
 
 const AboutPage = () => {
-  const containerRef = useRef();
+  const containerRef = useRef()
 
-  const { scrollYProgress } = useScroll({ container: containerRef });
+  const { scrollYProgress } = useScroll({ container: containerRef })
 
-  const skillRef = useRef();
+  const skillRef = useRef()
   // const isSkillRefInView = useInView(skillRef, {once:true});
-  const isSkillRefInView = useInView(skillRef, { margin: "-100px" });
+  const isSkillRefInView = useInView(skillRef, { margin: '-100px' })
 
-  const experienceRef = useRef();
-  const isExperienceRefInView = useInView(experienceRef, { margin: "-100px" });
+  const experienceRef = useRef()
+  const isExperienceRefInView = useInView(experienceRef, { margin: '-100px' })
 
   return (
     <motion.div
       className="h-full"
-      initial={{ y: "-200vh" }}
-      animate={{ y: "0%" }}
+      initial={{ y: '-200vh' }}
+      animate={{ y: '0%' }}
       transition={{ duration: 1 }}
     >
       {/* CONTAINER */}
@@ -31,7 +31,7 @@ const AboutPage = () => {
           <div className="flex flex-col gap-12 justify-center">
             {/* BIOGRAPHY IMAGE */}
             <Image
-              src="https://images.pexels.com/photos/775358/pexels-photo-775358.jpeg?auto=compress&cs=tinysrgb&w=800"
+              src="https://avatars.githubusercontent.com/u/90573543?v=4"
               alt=""
               width={112}
               height={112}
@@ -41,18 +41,17 @@ const AboutPage = () => {
             <h1 className="font-bold text-2xl">BIOGRAPHY</h1>
             {/* BIOGRAPHY DESC */}
             <p className="text-lg">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-              harum quibusdam cupiditate nobis accusamus sed aut aperiam,
-              reiciendis numquam! Voluptas voluptatibus obcaecati dolore itaque
-              suscipit! Vel doloremque numquam quam nihil.
+              I love JavaScript and I live in the world of JavaScript ! I design
+              and develop Front End with React JS | Next JS and Back End with
+              Node JS
             </p>
             {/* BIOGRAPHY QUOTE */}
-            <span className="italic">
+            {/* <span className="italic">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </span>
+            </span> */}
             {/* BIOGRAPHY SIGN SVG*/}
             <div className="self-end">
-              <svg
+              {/* <svg
                 width="185"
                 height="77"
                 viewBox="0 0 370 114"
@@ -64,13 +63,14 @@ const AboutPage = () => {
                   stroke="black"
                   strokeWidth="2"
                 />
-              </svg>
+              </svg> */}
+              <Image width={185} height={88} src="/signature.png" />
             </div>
             {/* BIOGRAPHY SCROLL SVG */}
             <motion.svg
               initial={{ opacity: 0.2, y: 0 }}
-              animate={{ opacity: 1, y: "10px" }}
-              transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+              animate={{ opacity: 1, y: '10px' }}
+              transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -94,7 +94,7 @@ const AboutPage = () => {
           <div className="flex flex-col gap-12 justify-center" ref={skillRef}>
             {/* SKILL TITLE */}
             <motion.h1
-              initial={{ x: "-300px" }}
+              initial={{ x: '-300px' }}
               animate={isSkillRefInView ? { x: 0 } : {}}
               transition={{ delay: 0.2 }}
               className="font-bold text-2xl"
@@ -103,91 +103,91 @@ const AboutPage = () => {
             </motion.h1>
             {/* SKILL LIST */}
             <motion.div
-              initial={{ x: "-300px" }}
+              initial={{ x: '-300px' }}
               animate={isSkillRefInView ? { x: 0 } : {}}
               className="flex gap-4 flex-wrap"
             >
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+              <div className="rounded transition-all p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
                 JavaScript
               </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+              <div className="rounded transition-all p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
                 TypeScript
               </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                React.js
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Next.js
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                SCSS
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Tailwind CSS
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                MongoDB
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                PostgreSQL
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+              <div className="rounded transition-all p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
                 Node.js
               </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Nest.js
+              <div className="rounded transition-all p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+                React.js
               </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Express.js
+              <div className="rounded transition-all p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+                Next.js
               </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Spring Boot
+              <div className="rounded transition-all p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+                Vue.js
               </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                GraphQL
+              <div className="rounded transition-all p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+                Context Api
               </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Apollo
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+              <div className="rounded transition-all p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
                 Redux
               </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Framer Motion
+              <div className="rounded transition-all p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+                Zustand
               </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Three.js
+              <div className="rounded transition-all p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+                SCSS
               </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                WebGL
+              <div className="rounded transition-all p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+                Tailwind CSS
               </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+              <div className="rounded transition-all p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+                Material UI
+              </div>
+              <div className="rounded transition-all p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+                Ant design
+              </div>
+              <div className="rounded transition-all p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+                Vuetify
+              </div>
+              <div className="rounded transition-all p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+                Express.js
+              </div>
+              <div className="rounded transition-all p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+                Nest.js
+              </div>
+              <div className="rounded transition-all p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+                MongoDB
+              </div>
+              <div className="rounded transition-all p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+                PostgreSQL
+              </div>
+              <div className="rounded transition-all p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
                 Webpack
               </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+              <div className="rounded transition-all p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
                 Vite
               </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+              <div className="rounded transition-all p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
                 Docker
               </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+              <div className="rounded transition-all p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
                 AWS
               </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+              <div className="rounded transition-all p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
                 Firebase
               </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+              <div className="rounded transition-all p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
                 Git
               </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+              <div className="rounded transition-all p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
                 Figma
               </div>
             </motion.div>
             {/* SKILL SCROLL SVG */}
             <motion.svg
               initial={{ opacity: 0.2, y: 0 }}
-              animate={{ opacity: 1, y: "10px" }}
-              transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+              animate={{ opacity: 1, y: '10px' }}
+              transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -214,8 +214,8 @@ const AboutPage = () => {
           >
             {/* EXPERIENCE TITLE */}
             <motion.h1
-              initial={{ x: "-300px" }}
-              animate={isExperienceRefInView ? { x: "0" } : {}}
+              initial={{ x: '-300px' }}
+              animate={isExperienceRefInView ? { x: '0' } : {}}
               transition={{ delay: 0.2 }}
               className="font-bold text-2xl"
             >
@@ -223,8 +223,8 @@ const AboutPage = () => {
             </motion.h1>
             {/* EXPERIENCE LIST */}
             <motion.div
-              initial={{ x: "-300px" }}
-              animate={isExperienceRefInView ? { x: "0" } : {}}
+              initial={{ x: '-300px' }}
+              animate={isExperienceRefInView ? { x: '0' } : {}}
               className=""
             >
               {/* EXPERIENCE LIST ITEM */}
@@ -233,20 +233,20 @@ const AboutPage = () => {
                 <div className="w-1/3 ">
                   {/* JOB TITLE */}
                   <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
-                    Senior JavaScript Engineer
+                    Frontend Developer
                   </div>
                   {/* JOB DESC */}
                   <div className="p-3 text-sm italic">
-                    I led web development, offering expertise in JavaScript
-                    frameworks.{" "}
+                    Created and implemented web applications using NextJs and
+                    ReactJs and Nestjs.
                   </div>
                   {/* JOB DATE */}
                   <div className="p-3 text-red-400 text-sm font-semibold">
-                    2024 - Present
+                    2022 - 2024
                   </div>
                   {/* JOB COMPANY */}
                   <div className="p-1 rounded bg-white text-sm font-semibold w-fit">
-                    Apple
+                    Spad
                   </div>
                 </div>
                 {/* CENTER */}
@@ -276,20 +276,21 @@ const AboutPage = () => {
                 <div className="w-1/3 ">
                   {/* JOB TITLE */}
                   <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
-                    Senior React Developer
+                    Frontend Developer
                   </div>
                   {/* JOB DESC */}
                   <div className="p-3 text-sm italic">
-                    I spearheaded React-based application development,
-                    leveraging advanced skills.{" "}
+                    Leveraged Next.js for server-side rendering (SSR) and static
+                    site generation (SSG) to improve SEO and initial page
+                    performance
                   </div>
                   {/* JOB DATE */}
                   <div className="p-3 text-red-400 text-sm font-semibold">
-                    2019 - 2024{" "}
+                    2023 - 2024{' '}
                   </div>
                   {/* JOB COMPANY */}
                   <div className="p-1 rounded bg-white text-sm font-semibold w-fit">
-                    Microsoft
+                    Zarinpal
                   </div>
                 </div>
               </div>
@@ -299,16 +300,19 @@ const AboutPage = () => {
                 <div className="w-1/3 ">
                   {/* JOB TITLE */}
                   <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
-                    Freelancer{" "}
+                    Frontend Developer
                   </div>
                   {/* JOB DESC */}
                   <div className="p-3 text-sm italic">
-                    I provided web solutions, applying a range of technologies
-                    to address client requirements.{" "}
+                    Successfully delivered many responsive websites and web
+                    applications using React JS and Vue Js
                   </div>
                   {/* JOB DATE */}
                   <div className="p-3 text-red-400 text-sm font-semibold">
-                    2010 - 2019{" "}
+                    2021 - 2022{' '}
+                  </div>
+                  <div className="p-1 rounded bg-white text-sm font-semibold w-fit">
+                    Anardoni
                   </div>
                 </div>
                 {/* CENTER */}
@@ -331,7 +335,7 @@ const AboutPage = () => {
         </div>
       </div>
     </motion.div>
-  );
-};
+  )
+}
 
-export default AboutPage;
+export default AboutPage
