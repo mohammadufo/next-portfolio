@@ -74,6 +74,8 @@ const PortfolioPage = () => {
                       alt=""
                       fill
                       className="object-cover"
+                      priority
+                      quality={50}
                     />
                   </div>
                   <p className="w-80 md:w-96 lg:w-[500px] lg:text-lg xl:w-[600px]">
