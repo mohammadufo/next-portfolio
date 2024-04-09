@@ -42,7 +42,7 @@ const ContactPage = () => {
     >
       <div className="h-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48">
         {/* TEXT CONTAINER */}
-        <div className="h-1/2 lg:h-full lg:w-1/2 flex items-center justify-center text-6xl">
+        <div className="h-1/3 lg:h-full lg:w-1/2 flex items-center justify-center text-6xl">
           <div>
             {text.split('').map((letter, index) => (
               <motion.span
@@ -62,40 +62,42 @@ const ContactPage = () => {
           </div>
         </div>
         {/* FORM CONTAINER */}
-        <form
-          onSubmit={sendEmail}
-          ref={form}
-          className="h-1/2 lg:h-full lg:w-1/2 bg-red-50 rounded-xl text-xl flex flex-col gap-8 justify-center p-24"
-        >
-          <span>Dear Muhammad,</span>
-          <textarea
-            rows={6}
-            required
-            className="bg-transparent border-b-2 border-b-black outline-none resize-none"
-            name="user_message"
-          />
-          <span>My mail address is:</span>
-          <input
-            name="user_email"
-            type="email"
-            required
-            className="bg-transparent border-b-2 border-b-black outline-none"
-          />
-          <span>Regards</span>
-          <button className="bg-purple-200 rounded font-semibold text-gray-600 p-4">
-            Send
-          </button>
-          {success && (
-            <span className="text-green-600 font-semibold">
-              Your message has been sent successfully!
-            </span>
-          )}
-          {error && (
-            <span className="text-red-600 font-semibold">
-              Something went wrong!
-            </span>
-          )}
-        </form>
+        <div className="h-full lg:h-full my-4 lg:w-1/2 bg-red-50 rounded-xl flex items-center justify-center py-6">
+          <form
+            onSubmit={sendEmail}
+            ref={form}
+            className="text-xl flex flex-col gap-8 justify-center"
+          >
+            <span>Dear Muhammad,</span>
+            <textarea
+              rows={6}
+              required
+              className="bg-transparent border-b-2 border-b-black outline-none resize-none"
+              name="user_message"
+            />
+            <span>My mail address is:</span>
+            <input
+              name="user_email"
+              type="email"
+              required
+              className="bg-transparent border-b-2 border-b-black outline-none"
+            />
+            <span>Regards</span>
+            <button className="bg-purple-200 rounded font-semibold text-gray-600 p-4">
+              Send
+            </button>
+            {success && (
+              <span className="text-green-600 font-semibold">
+                Your message has been sent successfully!
+              </span>
+            )}
+            {error && (
+              <span className="text-red-600 font-semibold">
+                Something went wrong!
+              </span>
+            )}
+          </form>
+        </div>
       </div>
     </motion.div>
   )
