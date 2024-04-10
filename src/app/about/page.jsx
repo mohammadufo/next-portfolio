@@ -64,7 +64,7 @@ const AboutPage = () => {
                   strokeWidth="2"
                 />
               </svg> */}
-              <Image width={185} height={88} src="/signature.png" />
+              <Image alt="" width={185} height={88} src="/signature.png" />
             </div>
             {/* BIOGRAPHY SCROLL SVG */}
             <motion.svg
